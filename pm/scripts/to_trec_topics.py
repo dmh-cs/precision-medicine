@@ -6,10 +6,10 @@ def parse_topics(topics_xml_s):
           for topic in root.findall('topic')]
 
 def to_trec_topic(topic, topic_num, topic_to_title):
-  trec_topic = '<top>\n'
-  trec_topic += '<num>{}</num>\n'.format(topic_num)
-  trec_topic += '<title>{}</topic>\n'.format(topic_to_title(topic))
-  trec_topic += '</top>\n'
+  trec_topic = '<TOP>\n'
+  trec_topic += '<NUM>{}</NUM>\n'.format(topic_num)
+  trec_topic += '<TITLE>{}</TITLE>\n'.format(topic_to_title(topic))
+  trec_topic += '</TOP>\n'
   return trec_topic
 
 def get_disease_and_gene_flat(topic): return '{} {}'.format(topic['disease'], topic['gene'])
