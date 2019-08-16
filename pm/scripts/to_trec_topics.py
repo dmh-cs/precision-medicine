@@ -20,7 +20,7 @@ def main():
   with open(topics_path) as fh:
     topics = parse_topics(fh.read())
   trec_topics = [to_trec_topic(topic, topic_num, get_disease_and_gene_flat)
-                 for topic_num, topic in enumerate(topics)]
+                 for topic_num, topic in enumerate(topics, 1)]
   with open(trec_topics_path, 'w') as fh:
     fh.write('\n'.join(trec_topics))
 
